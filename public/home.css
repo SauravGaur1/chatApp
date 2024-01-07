@@ -1,0 +1,385 @@
+html , body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+#profilePicker{
+    display: none;
+}
+
+#emojiIconPicker{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    bottom: 100px;
+    left: 75px;
+    background-color: white;
+    display: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 5px;
+}
+
+#emojiList{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(7,auto);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#emojiList > li{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.active{
+    display: flex !important;
+    justify-content: center;
+}
+
+.mainContainer{
+    height: 100vh;
+    /* width: min-content; */
+    display: flex;
+    position: relative;
+}
+
+.mainContainer > .leftPart{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer > .rightPart{
+    flex: 6;
+    background-image: url("/images/background.png");
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContainer > .rightPart > .bottomBar{
+    position: relative;
+}
+
+.dialogBox{
+    height: 80%;
+    width: 80%;
+    background-color: #EDEDED;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 2%;
+    padding: 25px;
+    box-shadow: 2px 2px 50px;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.dialogBox > .centerPart{
+    padding: 10px 0;
+    flex: 8;
+    overflow-y: scroll;
+}
+
+.centerPartProfile{
+    padding: 10px 0;
+    flex: 8;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.centerPartProfile > div, .centerPartProfile > form{
+    flex: 1;
+}
+
+.centerPartProfile > .profilePicCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerPartProfile .profileDataCont{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.centerPartProfile .profileDataCont > input{
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.centerPartProfile > .profilePicCont > img{
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.dialogBox > .upperPart, .dialogBox > .lowerActions{
+    flex: 1;
+}
+
+.dialogBox > .upperPart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #009698;
+    border-bottom: 1px solid grey;
+}
+
+.dialogBox > .lowerActions{
+    border-top: 1px solid grey;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialogBox > .lowerActions > .searchBarCont{
+    flex: 1;
+    background-color: transparent;
+    padding: 15px;
+}
+
+.dialogBox > .lowerActions > button{
+    padding: 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.dialogBox > .lowerActions > button:hover{
+    background-color: #009698;
+    color: white;
+    border: none;
+    transform: all;
+}
+
+
+
+.upperBar{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EDEDED;
+}
+
+.userImage{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.icons{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.searchBarCont{
+    padding: 15px;
+    background-color: #f6f6f6;
+}
+
+.searchBarCont > input{
+    padding: 15px;
+    width: -webkit-fill-available;
+    border-radius: 25px;
+    border-width: 0;
+    outline-width: 0;
+}
+
+.friendList{
+    overflow-y: scroll;
+}
+
+
+.userModel, .roomModel{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.userModel > img, .roomModel > img{
+    pointer-events: none;
+}
+
+.userModel > .userRightCont, .roomModel > .userRightCont{
+    padding: 10px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.userRightCont > p{
+    flex: 1;
+    margin: 0;
+    pointer-events: none;
+}
+
+.topRightBar{
+    background-color: #EDEDED;
+    padding: 2px;
+    flex: 0.5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.topRightBar > .leftPart{
+    display: flex;
+    align-items: center;
+}
+
+.topRightBar > .rightPart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatSection{
+    flex: 8;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.sent{
+    background-color: #dcf8c7 !important;
+    text-align: right;
+}
+
+.sentCont{
+    display: flex;
+    justify-content: right;
+}
+
+
+.chatMessage{
+    padding: 10px;
+    background: white;
+    margin: 10px 0;
+    width: fit-content;
+    max-width: 400px;
+    display: block;
+}
+
+.mssgData{
+    margin: 5px;
+    word-break: break-all;
+}
+
+.mssgTime{
+    margin: 5px;
+    color: grey;
+}
+
+.bottomBar{
+    flex: .5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+
+.bottomBar .leftPart{
+    padding-left: 5px;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.bottomBar > .searchBarCont { 
+    flex: 8;
+    margin: 0 10px;
+}
+
+.microphone{
+    padding-right: 15px;
+    /* flex: 1; */
+    display: flex;
+}
+
+
+.emptyChatBg{
+    height: 100%;
+    width: 100%;
+}
+
+/* for group */
+
+.centerPart > .userModel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.centerPart > .userModel > .userInfo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.action > input{
+    padding: 10px;
+    height: 50px;
+    width: 15px;
+}
+.userInfo > .userRightCont{
+    margin-left: 10px;
+}
+
+/* utilities */
+
+.fadeText{
+    font-weight: 400;
+    color: grey;
+}
+
+.profileForm{
+    display: none;
+}
+
+.displayInline{
+    display: inline;
+}
+
+.displayNone{
+    display: none;
+}
+
+/* customs */
+
+.mssgImage{
+    width: -webkit-fill-available;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: grey; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #009698; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00696b; 
+  }

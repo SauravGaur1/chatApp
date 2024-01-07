@@ -1,0 +1,111 @@
+html ,body{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.mainContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.mainContainer > .greenStrip { 
+    flex: 2;
+    background-color: #009688;
+}
+
+.mainContainer > .whiteStrip { 
+    flex: 8;
+    background-color: white;
+}
+
+.centeredContainer{
+    position: absolute;
+    height: 80vh;
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/images/background.png");
+    top: 10%;
+    left: 10%;
+    border-radius: 20px;
+}
+
+.title{
+    color: #009688;
+    font-size: 48px;
+    font-weight: bold
+}
+
+.loginButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 0 100px;
+    box-shadow: 20px 20px 10px grey;
+    cursor: pointer;
+}
+
+.loginButton:hover{
+    box-shadow: 20px 20px 20px grey;
+}
+
+.loginButton p{
+    margin-left: 10px;
+    pointer-events: none;
+}
+
+.loginButton img{
+    pointer-events: none;
+}
+
+.holder{
+    position: absolute;
+    top: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid white;
+    padding: 50px;
+    /* width: inherit; */
+    margin: 100px 100px;
+}
+
+.form input{
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 0;
+    outline-width: 0;
+}
+
+.form button{
+    padding: 10px;
+    margin: 10px 75px;
+    border: 1px solid white;
+    background-color: #009688;
+    color: white;
+    font-weight: bold;
+}
+
+/* utilities */
+
+.icons{
+    height: 30px;
+    width: 30px;
+}
